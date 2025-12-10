@@ -1,0 +1,25 @@
+{
+  "sessionId": "Sleep_Tracker___Well_20251209_215338-n2m",
+  "currentPhase": "Deploy",
+  "status": "analyzing",
+  "progressDetail": "Starting Deploy phase",
+  "testIteration": 0,
+  "timestamps": {
+    "phaseStart": "2025-12-10T04:37:00Z",
+    "phaseEnd": null,
+    "lastUpdated": "2025-12-10T04:37:00Z"
+  },
+  "completionTracking": {
+    "isComplete": false,
+    "completionPercentage": 0
+  },
+  "session_id": "Sleep_Tracker___Well_20251209_215338-n2m",
+  "phase": "Deploy",
+  "progress_detail": "Starting Deploy phase",
+  "test_iteration": 0,
+  "completion_tracking": {
+    "isComplete": false,
+    "completionPercentage": 0
+  },
+  "current_phase": "Deploy"
+}

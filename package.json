@@ -1,0 +1,33 @@
+{
+  "name": "sleep-tracker-wellness",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Personal wellness application for tracking sleep patterns and daily wellness diary with AI-powered insights",
+  "workspaces": [
+    "shared",
+    "server",
+    "client"
+  ],
+  "scripts": {
+    "dev": "concurrently \"npm run dev:server\" \"npm run dev:client\"",
+    "dev:server": "npm run dev -w server",
+    "dev:client": "npm run dev -w client",
+    "build": "npm run build -w shared && npm run build -w server && npm run build -w client",
+    "build:server": "npm run build -w server",
+    "build:client": "npm run build -w client",
+    "start": "npm run start -w server",
+    "test": "npm run test -w server && npm run test -w client",
+    "test:server": "npm run test -w server",
+    "test:client": "npm run test -w client",
+    "lint": "npm run lint -w server && npm run lint -w client",
+    "db:generate": "npm run db:generate -w server",
+    "db:migrate": "npm run db:migrate -w server"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "typescript": "^5.3.3"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

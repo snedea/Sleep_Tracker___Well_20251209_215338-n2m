@@ -1,0 +1,116 @@
+{
+  "build_start": "2025-12-09T21:54:38.792595",
+  "context_metrics": {
+    "max_context_window": 200000,
+    "model": "claude-sonnet-4",
+    "by_phase": {
+      "phase_scout": {
+        "tokens_used": 1135,
+        "percentage": 0.57,
+        "zone": "smart",
+        "budget_allocated": 14000,
+        "over_budget": false,
+        "duration_seconds": 59.32,
+        "exit_code": 0,
+        "timestamp": "2025-12-09T21:54:48.293573"
+      },
+      "phase_architect": {
+        "tokens_used": 6682,
+        "percentage": 3.34,
+        "zone": "smart",
+        "budget_allocated": 14000,
+        "over_budget": false,
+        "duration_seconds": 140.0,
+        "exit_code": 0,
+        "timestamp": "2025-12-09T21:57:20.858520"
+      },
+      "phase_builder": {
+        "tokens_used": 6850,
+        "percentage": 3.43,
+        "zone": "smart",
+        "budget_allocated": 40000,
+        "over_budget": false,
+        "duration_seconds": 1352.77,
+        "exit_code": 0,
+        "timestamp": "2025-12-09T22:20:14.542203"
+      },
+      "phase_test": {
+        "tokens_used": 3658,
+        "percentage": 1.83,
+        "zone": "smart",
+        "budget_allocated": 40000,
+        "over_budget": false,
+        "duration_seconds": 193.19,
+        "exit_code": 0,
+        "timestamp": "2025-12-09T22:23:48.934522"
+      },
+      "phase_screenshot": {
+        "tokens_used": 1301,
+        "percentage": 0.65,
+        "zone": "smart",
+        "budget_allocated": 3000,
+        "over_budget": false,
+        "duration_seconds": 492.58,
+        "exit_code": 0,
+        "timestamp": "2025-12-09T22:32:20.648948"
+      },
+      "phase_documentation": {
+        "tokens_used": 658,
+        "percentage": 0.33,
+        "zone": "smart",
+        "budget_allocated": 10000,
+        "over_budget": false,
+        "duration_seconds": 226.12,
+        "exit_code": 0,
+        "timestamp": "2025-12-09T22:36:32.328962"
+      },
+      "phase_deploy": {
+        "tokens_used": 606,
+        "percentage": 0.3,
+        "zone": "smart",
+        "budget_allocated": 6000,
+        "over_budget": false,
+        "duration_seconds": 70.12,
+        "exit_code": 0,
+        "timestamp": "2025-12-09T22:36:20.123487"
+      }
+    }
+  },
+  "phases": {
+    "phase_scout": {
+      "status": "completed",
+      "duration_seconds": 59.32,
+      "timestamp": "2025-12-09T21:54:48.293578"
+    },
+    "phase_architect": {
+      "status": "completed",
+      "duration_seconds": 140.0,
+      "timestamp": "2025-12-09T21:57:20.858526"
+    },
+    "phase_builder": {
+      "status": "completed",
+      "duration_seconds": 1352.77,
+      "timestamp": "2025-12-09T22:20:14.542211"
+    },
+    "phase_test": {
+      "status": "completed",
+      "duration_seconds": 193.19,
+      "timestamp": "2025-12-09T22:23:48.934526"
+    },
+    "phase_screenshot": {
+      "status": "completed",
+      "duration_seconds": 492.58,
+      "timestamp": "2025-12-09T22:32:20.648955"
+    },
+    "phase_documentation": {
+      "status": "completed",
+      "duration_seconds": 226.12,
+      "timestamp": "2025-12-09T22:36:32.328967"
+    },
+    "phase_deploy": {
+      "status": "completed",
+      "duration_seconds": 70.12,
+      "timestamp": "2025-12-09T22:36:20.123491"
+    }
+  }
+}

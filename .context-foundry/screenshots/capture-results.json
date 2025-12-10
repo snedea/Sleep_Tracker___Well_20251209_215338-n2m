@@ -1,0 +1,114 @@
+[
+  {
+    "filename": "login-populated-mobile-light.png",
+    "feature": "login",
+    "state": "populated",
+    "viewport": "mobile",
+    "success": true
+  },
+  {
+    "filename": "register-populated-mobile-light.png",
+    "feature": "register",
+    "state": "populated",
+    "viewport": "mobile",
+    "success": true
+  },
+  {
+    "filename": "dashboard-populated-mobile-light.png",
+    "feature": "dashboard",
+    "state": "populated",
+    "viewport": "mobile",
+    "success": true
+  },
+  {
+    "filename": "sleep-log-populated-mobile-light.png",
+    "feature": "sleep-log",
+    "state": "populated",
+    "viewport": "mobile",
+    "success": true
+  },
+  {
+    "filename": "diary-populated-mobile-light.png",
+    "feature": "diary",
+    "state": "populated",
+    "viewport": "mobile",
+    "success": true
+  },
+  {
+    "filename": "insights-populated-mobile-light.png",
+    "feature": "insights",
+    "state": "populated",
+    "viewport": "mobile",
+    "success": true
+  },
+  {
+    "filename": "history-populated-mobile-light.png",
+    "feature": "history",
+    "state": "populated",
+    "viewport": "mobile",
+    "success": true
+  },
+  {
+    "filename": "settings-populated-mobile-light.png",
+    "feature": "settings",
+    "state": "populated",
+    "viewport": "mobile",
+    "success": true
+  },
+  {
+    "filename": "login-populated-desktop-light.png",
+    "feature": "login",
+    "state": "populated",
+    "viewport": "desktop",
+    "success": true
+  },
+  {
+    "filename": "register-populated-desktop-light.png",
+    "feature": "register",
+    "state": "populated",
+    "viewport": "desktop",
+    "success": true
+  },
+  {
+    "filename": "dashboard-populated-desktop-light.png",
+    "feature": "dashboard",
+    "state": "populated",
+    "viewport": "desktop",
+    "success": true
+  },
+  {
+    "filename": "sleep-log-populated-desktop-light.png",
+    "feature": "sleep-log",
+    "state": "populated",
+    "viewport": "desktop",
+    "success": true
+  },
+  {
+    "filename": "diary-populated-desktop-light.png",
+    "feature": "diary",
+    "state": "populated",
+    "viewport": "desktop",
+    "success": true
+  },
+  {
+    "filename": "insights-populated-desktop-light.png",
+    "feature": "insights",
+    "state": "populated",
+    "viewport": "desktop",
+    "success": true
+  },
+  {
+    "filename": "history-populated-desktop-light.png",
+    "feature": "history",
+    "state": "populated",
+    "viewport": "desktop",
+    "success": true
+  },
+  {
+    "filename": "settings-populated-desktop-light.png",
+    "feature": "settings",
+    "state": "populated",
+    "viewport": "desktop",
+    "success": true
+  }
+]

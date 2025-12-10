@@ -1,0 +1,6 @@
+Screenshots captured:
+  login-desktop-light.png
+  login-mobile-light.png
+  register-desktop-light.png
+  register-mobile-light.png
+  login-error-desktop-light.png
