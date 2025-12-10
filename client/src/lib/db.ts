@@ -96,8 +96,8 @@ export const offlineDiaryEntries = {
 
 // Pending mutations queue
 export const pendingMutations = {
-  async add(mutation: Omit<PendingMutation, 'id'>): Promise<void> {
-    await db.pendingMutations.add(mutation as PendingMutation);
+  async add(mutation: PendingMutation): Promise<void> {
+    await db.pendingMutations.add(mutation);
   },
 
   async getAll(): Promise<PendingMutation[]> {

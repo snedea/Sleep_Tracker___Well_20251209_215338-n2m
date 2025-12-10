@@ -48,7 +48,7 @@ export function errorHandler(
   req: Request,
   res: Response,
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  next: NextFunction
+  _next: NextFunction
 ): void {
   // Default to 500 if no status code
   const statusCode = err instanceof ApiError ? err.statusCode : 500;
@@ -82,7 +82,7 @@ export function errorHandler(
 // 404 handler for undefined routes
 export function notFoundHandler(
   req: Request,
-  res: Response,
+  _res: Response,
   next: NextFunction
 ): void {
   const error = new ApiError(`Route not found: ${req.method} ${req.path}`, 404);

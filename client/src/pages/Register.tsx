@@ -87,7 +87,7 @@ export default function RegisterPage() {
                 placeholder="Enter password"
                 required
                 autoComplete="new-password"
-                hint="At least 8 characters"
+                helperText="At least 8 characters"
               />
 
               <Input

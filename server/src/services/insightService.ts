@@ -2,7 +2,7 @@ import { db } from '../lib/db.js';
 import { insights, sleepLogs, diaryEntries } from '../models/schema.js';
 import { eq, and, gte, desc, lte } from 'drizzle-orm';
 import { aiService } from './aiService.js';
-import type { InsightType, InsightQuery } from '@sleep-tracker/shared';
+import type { InsightQuery } from '@sleep-tracker/shared';
 
 // Get current timestamp in ISO format
 function getCurrentTimestamp(): string {

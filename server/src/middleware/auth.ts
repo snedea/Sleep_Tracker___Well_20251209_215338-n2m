@@ -1,5 +1,6 @@
 import { Request, Response, NextFunction } from 'express';
 import jwt from 'jsonwebtoken';
+import type { SignOptions } from 'jsonwebtoken';
 import { db } from '../lib/db.js';
 import { users } from '../models/schema.js';
 import { eq } from 'drizzle-orm';
@@ -31,7 +32,7 @@ export function generateToken(userId: number, email: string): string {
   return jwt.sign(
     { userId, email } as JwtPayload,
     JWT_SECRET,
-    { expiresIn: process.env.JWT_EXPIRES_IN || '15m' }
+    { expiresIn: process.env.JWT_EXPIRES_IN || '15m' } as SignOptions
   );
 }
 
@@ -40,7 +41,7 @@ export function generateRefreshToken(userId: number, email: string): string {
   return jwt.sign(
     { userId, email } as JwtPayload,
     JWT_SECRET,
-    { expiresIn: process.env.JWT_REFRESH_EXPIRES_IN || '7d' }
+    { expiresIn: process.env.JWT_REFRESH_EXPIRES_IN || '7d' } as SignOptions
   );
 }
 
@@ -103,7 +104,7 @@ export async function authenticate(
 // Optional authentication middleware (doesn't fail if no token)
 export async function optionalAuth(
   req: Request,
-  res: Response,
+  _res: Response,
   next: NextFunction
 ): Promise<void> {
   try {

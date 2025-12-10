@@ -21,7 +21,7 @@ router.get(
   validateQuery(diaryEntryQuerySchema),
   asyncHandler(async (req, res) => {
     const userId = req.user!.id;
-    const query = req.query as z.infer<typeof diaryEntryQuerySchema>;
+    const query = req.query as unknown as z.infer<typeof diaryEntryQuerySchema>;
 
     const entries = await diaryService.getByUserId(userId, query);
 

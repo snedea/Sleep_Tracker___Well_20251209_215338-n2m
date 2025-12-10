@@ -2,7 +2,6 @@ import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 import { apiGet, apiPost, apiPut, apiDelete } from '../lib/api';
 import { getDaysAgo } from '../lib/utils';
 import type {
-  DiaryEntry,
   CreateDiaryEntryInput,
   UpdateDiaryEntryInput,
   DiaryEntriesResponse,

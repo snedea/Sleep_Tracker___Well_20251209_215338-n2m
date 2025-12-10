@@ -49,12 +49,13 @@ export const sleepLogSchema = z.object({
 export const sleepLogQuerySchema = z.object({
   startDate: z.string().regex(/^\d{4}-\d{2}-\d{2}$/).optional(),
   endDate: z.string().regex(/^\d{4}-\d{2}-\d{2}$/).optional(),
-  limit: z.coerce.number().int().min(1).max(100).default(30),
-  offset: z.coerce.number().int().min(0).default(0),
+  limit: z.coerce.number().int().min(1).max(100).optional().default(30),
+  offset: z.coerce.number().int().min(0).optional().default(0),
 });
 
 // Type exports
 export type CreateSleepLogInput = z.infer<typeof createSleepLogSchema>;
 export type UpdateSleepLogInput = z.infer<typeof updateSleepLogSchema>;
 export type SleepLog = z.infer<typeof sleepLogSchema>;
-export type SleepLogQuery = z.infer<typeof sleepLogQuerySchema>;
+// Use z.input for query type since it represents the input before parsing/defaults
+export type SleepLogQuery = z.input<typeof sleepLogQuerySchema>;

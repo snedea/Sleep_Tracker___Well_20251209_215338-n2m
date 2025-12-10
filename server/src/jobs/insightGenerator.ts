@@ -52,7 +52,7 @@ export function scheduleInsightGeneration(): void {
   // Default: Run every day at 6 AM
   const cronSchedule = process.env.INSIGHT_GENERATION_CRON || '0 6 * * *';
 
-  const task = cron.schedule(cronSchedule, async () => {
+  cron.schedule(cronSchedule, async () => {
     console.log(`[InsightGenerator] Scheduled job triggered at ${new Date().toISOString()}`);
     await generateAllInsights();
   });

@@ -1,4 +1,4 @@
-import Database from 'better-sqlite3';
+import Database, { type Database as DatabaseType } from 'better-sqlite3';
 import { drizzle } from 'drizzle-orm/better-sqlite3';
 import * as schema from '../models/schema.js';
 import path from 'path';
@@ -14,7 +14,7 @@ if (!fs.existsSync(dbDir)) {
 }
 
 // Create SQLite database connection
-const sqlite = new Database(dbPath);
+const sqlite: DatabaseType = new Database(dbPath);
 
 // Enable foreign keys
 sqlite.pragma('foreign_keys = ON');

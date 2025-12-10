@@ -1,8 +1,9 @@
 import { useState } from 'react';
 import { PageHeader } from '@/components/layout/Header';
 import { Card, CardBody } from '@/components/ui/Card';
+import { Button } from '@/components/ui/Button';
 import { DiaryEntryForm } from '@/components/forms/DiaryEntryForm';
-import { useDiaryEntries, useCreateDiaryEntry, useUpdateDiaryEntry } from '@/hooks/useDiaryEntries';
+import { useDiaryEntries } from '@/hooks/useDiaryEntries';
 import { getToday, formatDate, getMoodLabel, formatActivity } from '@/lib/utils';
 import { Spinner } from '@/components/ui/Spinner';
 import type { DiaryEntry } from '@/types';
@@ -11,20 +12,13 @@ export default function DiaryPage() {
   const today = getToday();
   const [editingEntry, setEditingEntry] = useState<DiaryEntry | null>(null);
 
-  const { entries, isLoading } = useDiaryEntries({ limit: 7 });
-  const createMutation = useCreateDiaryEntry();
-  const updateMutation = useUpdateDiaryEntry();
+  const { data: entries, isLoading } = useDiaryEntries({ limit: 7 });
 
   const todayEntry = entries?.find((entry) => entry.date === today);
   const showForm = !todayEntry || editingEntry;
 
-  const handleSubmit = async (data: Parameters<typeof createMutation.mutate>[0]) => {
-    if (editingEntry) {
-      await updateMutation.mutateAsync({ id: editingEntry.id, data });
-      setEditingEntry(null);
-    } else {
-      await createMutation.mutateAsync(data);
-    }
+  const handleSuccess = () => {
+    setEditingEntry(null);
   };
 
   if (isLoading) {
@@ -43,16 +37,17 @@ export default function DiaryPage() {
       />
 
       {showForm ? (
-        <Card>
-          <CardBody>
-            <DiaryEntryForm
-              initialData={editingEntry || undefined}
-              onSubmit={handleSubmit}
-              isLoading={createMutation.isPending || updateMutation.isPending}
-              onCancel={editingEntry ? () => setEditingEntry(null) : undefined}
-            />
-          </CardBody>
-        </Card>
+        <div className="space-y-4">
+          {editingEntry && (
+            <Button variant="ghost" onClick={() => setEditingEntry(null)}>
+              &larr; Cancel Edit
+            </Button>
+          )}
+          <DiaryEntryForm
+            initialData={editingEntry || undefined}
+            onSuccess={handleSuccess}
+          />
+        </div>
       ) : todayEntry ? (
         <Card className="border-green-200 bg-green-50">
           <CardBody>

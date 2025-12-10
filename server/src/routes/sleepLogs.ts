@@ -21,7 +21,7 @@ router.get(
   validateQuery(sleepLogQuerySchema),
   asyncHandler(async (req, res) => {
     const userId = req.user!.id;
-    const query = req.query as z.infer<typeof sleepLogQuerySchema>;
+    const query = req.query as unknown as z.infer<typeof sleepLogQuerySchema>;
 
     const logs = await sleepService.getByUserId(userId, query);
 

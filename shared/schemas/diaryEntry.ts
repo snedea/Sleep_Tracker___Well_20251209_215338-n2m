@@ -58,12 +58,13 @@ export const diaryEntrySchema = z.object({
 export const diaryEntryQuerySchema = z.object({
   startDate: z.string().regex(/^\d{4}-\d{2}-\d{2}$/).optional(),
   endDate: z.string().regex(/^\d{4}-\d{2}-\d{2}$/).optional(),
-  limit: z.coerce.number().int().min(1).max(100).default(30),
-  offset: z.coerce.number().int().min(0).default(0),
+  limit: z.coerce.number().int().min(1).max(100).optional().default(30),
+  offset: z.coerce.number().int().min(0).optional().default(0),
 });
 
 // Type exports
 export type CreateDiaryEntryInput = z.infer<typeof createDiaryEntrySchema>;
 export type UpdateDiaryEntryInput = z.infer<typeof updateDiaryEntrySchema>;
 export type DiaryEntry = z.infer<typeof diaryEntrySchema>;
-export type DiaryEntryQuery = z.infer<typeof diaryEntryQuerySchema>;
+// Use z.input for query type since it represents the input before parsing/defaults
+export type DiaryEntryQuery = z.input<typeof diaryEntryQuerySchema>;

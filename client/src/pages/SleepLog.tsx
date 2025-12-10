@@ -1,8 +1,9 @@
 import { useState } from 'react';
 import { PageHeader } from '@/components/layout/Header';
 import { Card, CardBody } from '@/components/ui/Card';
+import { Button } from '@/components/ui/Button';
 import { SleepLogForm } from '@/components/forms/SleepLogForm';
-import { useSleepLogs, useCreateSleepLog, useUpdateSleepLog } from '@/hooks/useSleepLogs';
+import { useSleepLogs } from '@/hooks/useSleepLogs';
 import { getToday, formatDate, formatDuration, getQualityLabel } from '@/lib/utils';
 import { Spinner } from '@/components/ui/Spinner';
 import type { SleepLog } from '@/types';
@@ -11,20 +12,13 @@ export default function SleepLogPage() {
   const today = getToday();
   const [editingLog, setEditingLog] = useState<SleepLog | null>(null);
 
-  const { logs, isLoading } = useSleepLogs({ limit: 7 });
-  const createMutation = useCreateSleepLog();
-  const updateMutation = useUpdateSleepLog();
+  const { data: logs, isLoading } = useSleepLogs({ limit: 7 });
 
   const todayLog = logs?.find((log) => log.date === today);
   const showForm = !todayLog || editingLog;
 
-  const handleSubmit = async (data: Parameters<typeof createMutation.mutate>[0]) => {
-    if (editingLog) {
-      await updateMutation.mutateAsync({ id: editingLog.id, data });
-      setEditingLog(null);
-    } else {
-      await createMutation.mutateAsync(data);
-    }
+  const handleSuccess = () => {
+    setEditingLog(null);
   };
 
   if (isLoading) {
@@ -43,16 +37,17 @@ export default function SleepLogPage() {
       />
 
       {showForm ? (
-        <Card>
-          <CardBody>
-            <SleepLogForm
-              initialData={editingLog || undefined}
-              onSubmit={handleSubmit}
-              isLoading={createMutation.isPending || updateMutation.isPending}
-              onCancel={editingLog ? () => setEditingLog(null) : undefined}
-            />
-          </CardBody>
-        </Card>
+        <div className="space-y-4">
+          {editingLog && (
+            <Button variant="ghost" onClick={() => setEditingLog(null)}>
+              &larr; Cancel Edit
+            </Button>
+          )}
+          <SleepLogForm
+            initialData={editingLog || undefined}
+            onSuccess={handleSuccess}
+          />
+        </div>
       ) : todayLog ? (
         <Card className="border-green-200 bg-green-50">
           <CardBody>

@@ -1,6 +1,4 @@
-import { migrate } from 'drizzle-orm/better-sqlite3/migrator';
-import { db, sqlite } from './db.js';
-import * as schema from '../models/schema.js';
+import { sqlite } from './db.js';
 
 console.log('Running migrations...');
 

@@ -20,8 +20,8 @@ export default function HistoryPage() {
   const daysAgo = parseInt(timeRange);
   const startDate = getDaysAgo(daysAgo);
 
-  const { logs, isLoading: sleepLoading } = useSleepLogs({ startDate, limit: daysAgo });
-  const { entries, isLoading: diaryLoading } = useDiaryEntries({ startDate, limit: daysAgo });
+  const { data: logs, isLoading: sleepLoading } = useSleepLogs({ startDate, limit: daysAgo });
+  const { data: entries, isLoading: diaryLoading } = useDiaryEntries({ startDate, limit: daysAgo });
 
   const isLoading = sleepLoading || diaryLoading;
 

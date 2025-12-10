@@ -133,7 +133,7 @@ export default function SettingsPage() {
               type="password"
               value={newPassword}
               onChange={(e) => setNewPassword(e.target.value)}
-              hint="At least 8 characters"
+              helperText="At least 8 characters"
               required
             />
             <Input

@@ -1,4 +1,4 @@
-import openai, { generateCompletion, type ChatMessage } from '../lib/openai.js';
+import { generateCompletion, type ChatMessage } from '../lib/openai.js';
 import type { SleepLog, DiaryEntry, InsightType } from '@sleep-tracker/shared';
 
 // Calculate average sleep duration

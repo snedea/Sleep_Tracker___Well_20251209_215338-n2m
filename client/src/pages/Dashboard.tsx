@@ -13,12 +13,12 @@ export default function Dashboard() {
   const today = getToday();
   const sevenDaysAgo = getDaysAgo(7);
 
-  const { logs, isLoading: sleepLoading } = useSleepLogs({
+  const { data: logs, isLoading: sleepLoading } = useSleepLogs({
     startDate: sevenDaysAgo,
     limit: 7,
   });
 
-  const { entries, isLoading: diaryLoading } = useDiaryEntries({
+  const { data: entries, isLoading: diaryLoading } = useDiaryEntries({
     startDate: sevenDaysAgo,
     limit: 7,
   });
